@@ -1,0 +1,70 @@
+# 1. ABSTRACT
+
+JobTrack is a web-based Job Application and Interview Tracking System developed using Python, Flask, HTML, CSS, JavaScript and SQLite.
+
+The main purpose of this application is to help job seekers organize and monitor their job application activities in one place.
+
+The system allows users to add, view, update and delete job application records. It also provides interview scheduling and management functionality, allowing users to maintain interview dates, times, statuses and notes.
+
+JobTrack includes search and filtering options, pagination, an analytics dashboard with graphical representations and an Excel export feature.
+
+The application uses Flask-SQLAlchemy for database operations and SQLite for persistent data storage.
+
+JobTrack provides a simple and organized solution for managing the job search process.
+
+# 2. INTRODUCTION
+
+Finding and applying for jobs involves managing multiple companies, job roles, application dates and interview schedules.
+
+When job seekers apply to several companies, keeping track of application progress manually can become difficult.
+
+JobTrack was developed to simplify this process through a centralized web application.
+
+It provides an organized interface for managing job applications, scheduling interviews, monitoring application progress and viewing useful statistics.
+
+The application runs locally through the Flask development server and stores information in an SQLite database.
+
+# 3. PROBLEM STATEMENT
+
+Job seekers frequently apply to multiple organizations and face difficulties managing their application information.
+
+Common challenges include:
+
+- Difficulty remembering applied companies and job positions.
+- Losing track of application dates.
+- Forgetting scheduled interview dates and times.
+- Difficulty monitoring application statuses.
+- Lack of a centralized system for managing job search activities.
+- Difficulty analyzing overall job application progress.
+
+JobTrack addresses these challenges by providing a centralized platform for recording, organizing and monitoring job applications and interviews.
+
+# 4. PROJECT OBJECTIVES
+
+The main objectives of JobTrack are:
+
+1. To develop a user-friendly job application tracking system.
+2. To provide functionality for adding, editing, viewing and deleting job applications.
+3. To manage interview schedules and their statuses.
+4. To provide search and filtering capabilities.
+5. To display application statistics through an analytics dashboard.
+6. To generate Excel reports of job application records.
+7. To implement reliable data storage using SQLite.
+8. To provide a responsive interface for different screen sizes.
+
+# 5. PROJECT SCOPE
+
+JobTrack is designed as a local web-based application for individual job seekers.
+
+Its scope includes:
+
+- Job application management.
+- Interview scheduling and tracking.
+- Application search and filtering.
+- Interview search and filtering.
+- Application and interview analytics.
+- Excel export of application records.
+- Persistent local database storage.
+- Responsive user interface.
+
+The application focuses on simplifying personal job search management through a centralized system.

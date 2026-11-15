@@ -1,0 +1,87 @@
+# 7. MODULE DESCRIPTION
+
+## 7.1 Dashboard Module
+
+The Dashboard module provides a summary of job application activities.
+
+Features:
+- Displays total job applications.
+- Shows application status statistics.
+- Displays interview-related information.
+- Provides quick navigation to other modules.
+
+## 7.2 Job Application Management Module
+
+This module allows users to manage their job applications.
+
+Features:
+- Add new job applications.
+- View all saved applications.
+- Edit existing application details.
+- Delete unwanted applications.
+- Store company name, job role, location, application date, status, job URL and notes.
+
+## 7.3 Interview Management Module
+
+This module helps users organize and track their interviews.
+
+Features:
+- Schedule new interviews.
+- Associate interviews with existing job applications.
+- Edit interview details.
+- Delete interview records.
+- Track scheduled, completed and cancelled interviews.
+- Store interview dates, times and notes.
+
+## 7.4 Search and Filter Module
+
+This module helps users quickly find specific records.
+
+Features:
+- Search applications by company name or job role.
+- Filter applications by status.
+- Search interviews by company name or job role.
+- Filter interviews by interview status.
+- Filter interviews based on upcoming and past dates.
+- Navigate through records using pagination.
+
+## 7.5 Analytics Module
+
+The Analytics module provides a visual representation of job application activities.
+
+Features:
+- Displays total applications.
+- Displays total interviews.
+- Shows selected applications.
+- Calculates selection success rate.
+- Displays application status using a doughnut chart.
+- Displays interview status using a pie chart.
+- Displays monthly application trends using a bar chart.
+
+## 7.6 Excel Export Module
+
+This module allows users to download their job application records.
+
+Features:
+- Exports application records into an Excel workbook.
+- Includes company name, job role, location, application date and status.
+- Includes job URLs and additional notes.
+- Automatically adjusts column widths for readability.
+- Downloads the generated Excel file.
+
+The module uses the OpenPyXL Python library.
+
+## 7.7 Validation Module
+
+The application includes validation to maintain accurate records.
+
+Features:
+- Checks required application fields.
+- Validates application dates.
+- Checks job posting URLs.
+- Validates interview dates and times.
+- Ensures valid interview statuses.
+- Displays error messages when invalid information is submitted.
+
+## 7.8 Conclusion
+The modules work together to provide an organized platform for managing job applications and interviews. They reduce manual tracking efforts and help users monitor their job search activities efficiently.

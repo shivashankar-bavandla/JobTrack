@@ -1,0 +1,74 @@
+# 8. INSTALLATION AND EXECUTION GUIDE
+
+## 8.1 Prerequisites
+
+Before installing JobTrack, ensure the following software is available:
+
+- Python 3
+- Visual Studio Code (recommended)
+- Git
+- Web browser
+- pip package manager
+
+## 8.2 Download the Project
+
+Clone the GitHub repository:
+
+git clone https://github.com/shivashankar-bavandla/JobTrack.git
+
+Navigate to the project directory:
+
+cd JobTrack
+
+## 8.3 Create a Virtual Environment
+
+Create a Python virtual environment:
+
+python -m venv venv
+
+Activate the environment on Windows:
+
+venv\Scripts\activate
+
+## 8.4 Install Dependencies
+
+Install the required Python packages:
+
+pip install -r requirements.txt
+
+## 8.5 Run the Application
+
+Start the Flask application:
+
+python app.py
+
+The application will start on the local development server.
+
+Open the following address in your web browser:
+
+http://127.0.0.1:5000/
+
+## 8.6 Database Initialization
+
+JobTrack uses SQLite for data storage.
+
+The application automatically creates the required database tables when it starts for the first time.
+
+The database file is stored at:
+
+database/jobtrack.db
+
+## 8.7 Using the Application
+
+After opening JobTrack in your browser, users can:
+
+1. View the dashboard.
+2. Add and manage job applications.
+3. Schedule and manage interviews.
+4. Search and filter records.
+5. View analytics and charts.
+6. Export job application records to Excel.
+
+## 8.8 Conclusion
+
+The installation process is straightforward and requires only Python and the listed dependencies. Once installed, JobTrack can run locally through the Flask development server.

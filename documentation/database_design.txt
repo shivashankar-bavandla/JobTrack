@@ -1,0 +1,60 @@
+# 6. DATABASE DESIGN
+
+## 6.1 Introduction
+
+JobTrack uses SQLite as its database management system. The database stores job application details and interview schedules. Flask-SQLAlchemy is used as the Object Relational Mapper (ORM) to interact with the database.
+
+The database file is named `jobtrack.db` and is located inside the `database` folder.
+
+## 6.2 Database Tables
+
+The application contains two main database tables.
+
+### Table 1: JobApplication
+
+This table stores information about job applications submitted by the user.
+
+| Column | Data Type | Description |
+|---|---|---|
+| id | Integer | Primary key |
+| company_name | String(100) | Company name |
+| job_role | String(100) | Job position |
+| location | String(100) | Job location |
+| application_date | Date | Date of application |
+| status | String(50) | Application status |
+| job_url | String(300) | Job posting URL |
+| notes | Text | Additional information |
+
+### Table 2: Interview
+
+This table stores interview details associated with job applications.
+
+| Column | Data Type | Description |
+|---|---|---|
+| id | Integer | Primary key |
+| application_id | Integer | Foreign key referencing JobApplication |
+| interview_date | Date | Interview date |
+| interview_time | Time | Interview time |
+| status | String(50) | Interview status |
+| notes | Text | Additional interview information |
+
+## 6.3 Database Relationship
+
+JobTrack follows a One-to-Many relationship between the JobApplication and Interview tables.
+
+One job application can have multiple interviews. Each interview belongs to one job application.
+
+The `application_id` column in the Interview table acts as a foreign key referencing the `id` column in the JobApplication table.
+
+## 6.4 Database Operations
+
+The application performs the following database operations:
+
+- INSERT: Add new job applications and interviews.
+- SELECT: Retrieve application and interview records.
+- UPDATE: Modify existing records.
+- DELETE: Remove unwanted records.
+
+## 6.5 Conclusion
+
+The SQLite database provides a lightweight and reliable way to store job application and interview information. The relationship between the two tables helps maintain organized and connected records.

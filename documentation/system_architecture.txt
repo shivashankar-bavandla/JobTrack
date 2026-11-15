@@ -1,0 +1,85 @@
+# 5. SYSTEM ARCHITECTURE AND APPLICATION WORKFLOW
+
+## 5.1 Introduction
+
+JobTrack follows a three-layer architecture consisting of the Frontend Layer, Backend Layer and Database Layer.
+
+These layers work together to provide an organized job application and interview tracking system.
+
+## 5.2 Frontend Layer
+
+The frontend layer provides the user interface through which users interact with the application.
+
+Technologies used:
+
+- HTML: Creates the structure of web pages.
+- CSS: Provides styling and responsive layouts.
+- JavaScript: Handles interactive functionality and chart presentation.
+
+## 5.3 Backend Layer
+
+The backend is developed using Python and the Flask framework.
+
+Its responsibilities include:
+
+- Processing user requests.
+- Managing job applications.
+- Scheduling and managing interviews.
+- Performing search and filtering operations.
+- Generating application analytics.
+- Exporting application records to Excel.
+
+Flask-SQLAlchemy is used to communicate with the database.
+
+## 5.4 Database Layer
+
+SQLite is used to store application data.
+
+The database contains two main tables:
+
+1. JobApplication
+2. Interview
+
+The Interview table is connected to the JobApplication table through a foreign key.
+
+## 5.5 Application Workflow
+
+The application follows this workflow:
+
+1. The user opens JobTrack in a web browser.
+2. The frontend displays the dashboard and available features.
+3. The user performs an action, such as adding an application or scheduling an interview.
+4. Flask receives the request and processes the information.
+5. Flask-SQLAlchemy performs the required database operation.
+6. SQLite stores or retrieves the requested information.
+7. Flask returns the result to the frontend.
+8. The updated information is displayed to the user.
+
+## 5.6 Architecture Diagram
+
+USER
+  |
+  v
+WEB BROWSER
+  |
+  v
+FRONTEND LAYER
+HTML + CSS + JavaScript
+  |
+  v
+BACKEND LAYER
+Python + Flask
+  |
+  v
+DATABASE ACCESS
+Flask-SQLAlchemy
+  |
+  v
+DATABASE LAYER
+SQLite (jobtrack.db)
+
+## 5.7 Conclusion
+
+The three-layer architecture separates the user interface, application logic and data storage.
+
+This structure makes JobTrack easier to understand, maintain and extend in the future.

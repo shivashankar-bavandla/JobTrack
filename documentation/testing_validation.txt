@@ -1,0 +1,72 @@
+# 9. TESTING AND VALIDATION
+
+## 9.1 Introduction
+
+Testing is an important part of software development. JobTrack was tested to verify that its features work correctly and that user information is stored and retrieved properly.
+
+## 9.2 Functional Testing
+
+The following application functionalities were tested:
+
+| Test Case | Expected Result | Status |
+|---|---|---|
+| Add Job Application | Application should be saved | Passed |
+| View Applications | Saved applications should be displayed | Passed |
+| Edit Application | Application details should be updated | Passed |
+| Delete Application | Selected application should be deleted | Passed |
+| Search Applications | Matching records should appear | Passed |
+| Filter Applications | Records should be filtered by status | Passed |
+| Application Pagination | Records should display across pages | Passed |
+| Add Interview | Interview should be scheduled | Passed |
+| Edit Interview | Interview details should be updated | Passed |
+| Delete Interview | Selected interview should be deleted | Passed |
+| Interview Search | Matching interviews should appear | Passed |
+| Interview Filters | Interviews should be filtered correctly | Passed |
+| Analytics Dashboard | Charts and statistics should display | Passed |
+| Excel Export | Excel file should download successfully | Passed |
+| Responsive Layout | Pages should adapt to mobile screens | Passed |
+| Database Persistence | Records should remain after restarting the application | Passed |
+
+## 9.3 Input Validation
+
+JobTrack implements validation to prevent invalid information from being submitted.
+
+Application validation includes:
+- Company name is required.
+- Job role is required.
+- Application date is required.
+- Job URLs must use valid HTTP or HTTPS formats when provided.
+
+Interview validation includes:
+- An existing job application must be selected.
+- Interview date is required.
+- Interview time must be valid when provided.
+- Interview status must be Scheduled, Completed or Cancelled.
+
+## 9.4 Database Testing
+
+The application was tested to verify that job applications and interview records are stored correctly in the SQLite database.
+
+Database persistence was also checked by stopping and restarting the Flask application.
+
+Previously saved records remained available after restarting the application.
+
+## 9.5 Responsive Testing
+
+The application's responsive layout was checked using browser device emulation.
+
+The following pages were tested:
+
+- Dashboard
+- Applications
+- Add Application
+- Interviews
+- Schedule Interview
+- Edit Interview
+- Analytics
+
+The application adapts to smaller screen sizes, with horizontal scrolling available for wide tables.
+
+## 9.6 Testing Conclusion
+
+The completed tests confirmed that the major JobTrack functionalities operate as expected. The application successfully manages job applications, interview schedules, analytics and Excel exports.

@@ -1,0 +1,33 @@
+# 10. SCREENSHOTS AND RESULTS
+
+## 10.1 Dashboard
+
+The Dashboard provides an overview of job application activities, including application statistics and interview information.
+
+## 10.2 Applications Page
+
+The Applications page displays saved job application records. Users can search, filter, edit and delete applications.
+
+## 10.3 Add Application Page
+
+This page allows users to enter company details, job roles, locations, application dates, statuses, job URLs and notes.
+
+## 10.4 Interviews Page
+
+The Interviews page displays scheduled and completed interview records with search and filtering functionality.
+
+## 10.5 Schedule Interview Page
+
+Users can associate an interview with an existing job application and enter the interview date, time, status and notes.
+
+## 10.6 Analytics Dashboard
+
+The Analytics dashboard presents application and interview statistics using graphical charts.
+
+## 10.7 Results
+
+The completed JobTrack application successfully provides a centralized platform for managing job applications and interviews.
+
+The system supports application management, interview scheduling, search, filtering, pagination, analytics, database persistence and Excel export.
+
+The responsive interface also supports viewing the application on smaller screens.
