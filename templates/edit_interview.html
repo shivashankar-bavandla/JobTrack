@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Interview{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <div>
+        <h1>Edit Interview</h1>
+        <p>Update your interview details.</p>
+    </div>
+</div>
+
+<div class="applications-section">
+
+    <form method="POST" class="application-form">
+
+        {% if error %}
+        <div class="error-message">
+            {{ error }}
+        </div>
+        {% endif %}
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label>Company</label>
+                <input type="text"
+                       value="{{ interview.application.company_name }}"
+                       disabled>
+            </div>
+
+            <div class="form-group">
+                <label>Job Role</label>
+                <input type="text"
+                       value="{{ interview.application.job_role }}"
+                       disabled>
+            </div>
+
+            <div class="form-group">
+                <label for="interview_date">Interview Date *</label>
+                <input type="date"
+                       name="interview_date"
+                       id="interview_date"
+                       value="{{ interview.interview_date.strftime('%Y-%m-%d') }}"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="interview_time">Interview Time</label>
+                <input type="time"
+                       name="interview_time"
+                       id="interview_time"
+                       value="{{ interview.interview_time.strftime('%H:%M') if interview.interview_time else '' }}">
+            </div>
+
+            <div class="form-group">
+                <label for="status">Interview Status</label>
+                <select name="status" id="status" required>
+
+                    <option value="Scheduled"
+                        {% if interview.status == 'Scheduled' %}selected{% endif %}>
+                        Scheduled
+                    </option>
+
+                    <option value="Completed"
+                        {% if interview.status == 'Completed' %}selected{% endif %}>
+                        Completed
+                    </option>
+
+                    <option value="Cancelled"
+                        {% if interview.status == 'Cancelled' %}selected{% endif %}>
+                        Cancelled
+                    </option>
+
+                </select>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label for="notes">Interview Notes</label>
+            <textarea name="notes"
+                      id="notes"
+                      rows="4"
+                      placeholder="Enter interview notes...">{{ interview.notes or '' }}</textarea>
+        </div>
+
+        <div class="form-actions">
+
+            <a href="{{ url_for('interviews') }}"
+               class="cancel-button">Cancel</a>
+
+            <button type="submit" class="add-button">
+                Update Interview
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}

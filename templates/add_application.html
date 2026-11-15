@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block title %}Add Application{% endblock %}
+{% block content %}
+
+<header class="topbar">
+    <div>
+        <h1>Add Application</h1>
+        <p>Keep track of your new job opportunity.</p>
+    </div>
+</header>
+
+<section class="applications-section">
+
+    <form action="/add-application" method="POST" class="application-form">
+        {% if error %}
+        <div class="error-message">
+        {{ error }}
+        </div>
+        {% endif %}
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label>Company Name *</label>
+                <input type="text"
+                       name="company_name"
+                       placeholder="Enter company name"
+                       maxlength="100"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label>Job Role *</label>
+                <input type="text"
+                       name="job_role"
+                       placeholder="Python Developer"
+                       maxlength="100"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label>Location</label>
+                <input type="text"
+                       name="location"
+                       placeholder="Hyderabad"
+                       maxlength="100">
+            </div>
+
+            <div class="form-group">
+                <label>Application Date *</label>
+                <input type="date"
+                       name="application_date"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label>Application Status</label>
+                <select name="status" required>
+                    <option value="Applied">Applied</option>
+                    <option value="Interview">Interview</option>
+                    <option value="Selected">Selected</option>
+                    <option value="Rejected">Rejected</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Job URL</label>
+                <input type="url"
+                       name="job_url"
+                       placeholder="https://example.com"
+                       maxlength="300">
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label>Additional Notes</label>
+            <textarea name="notes"
+                      placeholder="Enter additional information..."
+                      rows="4"></textarea>
+        </div>
+
+        <div class="form-actions">
+
+            <a href="/" class="cancel-button">Cancel</a>
+
+            <button type="submit" class="add-button">
+                <i class="fa-solid fa-plus"></i>
+                Save Application
+            </button>
+
+        </div>
+
+    </form>
+
+</section>
+
+{% endblock %}

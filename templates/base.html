@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobTrack - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fa-solid fa-briefcase"></i>
+                <span>JobTrack</span>
+            </div>
+            <nav class="sidebar-menu">
+                <p class="menu-heading">MENU</p>
+                <a href="{{ url_for('home') }}"
+                    class="menu-item {% if request.endpoint == 'home' %}active{% endif %}">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="{{ url_for('applications') }}"
+                    class="menu-item {% if request.endpoint == 'applications' %}active{% endif %}">
+                    <i class="fa-solid fa-file-lines"></i>
+                     <span>Applications</span>
+                    </a>
+                <a href="{{ url_for('interviews') }}"
+                    class="menu-item {% if request.endpoint == 'interviews' %}active{% endif %}">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Interviews</span>
+                </a>
+                <a href="{{ url_for('analytics') }}"
+                   class="menu-item {% if request.endpoint == 'analytics' %}active{% endif %}">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Analytics</span>
+                </a>
+            </nav>
+            <div class="sidebar-bottom">
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            {% block content %}
+            {% endblock %}
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

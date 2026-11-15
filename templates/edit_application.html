@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Application{% endblock %}
+
+{% block content %}
+
+<header class="topbar">
+    <div>
+        <h1>Edit Application</h1>
+        <p>Update your job application details.</p>
+    </div>
+</header>
+
+<section class="applications-section">
+
+    <form method="POST" class="application-form">
+
+        {% if error %}
+        <div class="error-message">
+            {{ error }}
+        </div>
+        {% endif %}
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label>Company Name *</label>
+                <input type="text"
+                       name="company_name"
+                       value="{{ application.company_name }}"
+                       maxlength="100"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label>Job Role *</label>
+                <input type="text"
+                       name="job_role"
+                       value="{{ application.job_role }}"
+                       maxlength="100"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label>Location</label>
+                <input type="text"
+                       name="location"
+                       value="{{ application.location or '' }}"
+                       maxlength="100">
+            </div>
+
+            <div class="form-group">
+                <label>Application Date *</label>
+                <input type="date"
+                       name="application_date"
+                       value="{{ application.application_date.strftime('%Y-%m-%d') if application.application_date else '' }}"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label>Application Status</label>
+
+                <select name="status" required>
+                    {% for status in ['Applied', 'Interview', 'Selected', 'Rejected'] %}
+                    <option value="{{ status }}"
+                        {% if application.status == status %}selected{% endif %}>
+                        {{ status }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Job URL</label>
+                <input type="url"
+                       name="job_url"
+                       value="{{ application.job_url or '' }}"
+                       maxlength="300">
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label>Additional Notes</label>
+            <textarea name="notes" rows="4">{{ application.notes or '' }}</textarea>
+        </div>
+
+        <div class="form-actions">
+
+            <a href="{{ url_for('applications') }}" class="cancel-button">
+                Cancel
+            </a>
+
+            <button type="submit" class="add-button">
+                <i class="fa-solid fa-save"></i>
+                Update Application
+            </button>
+
+        </div>
+
+    </form>
+
+</section>
+
+{% endblock %}
